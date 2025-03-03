@@ -182,3 +182,32 @@ def game_dict():
             ]
         }
     }
+
+def num_points_per_game(name):
+    data = game_dict()
+
+    for player in data["home"]["players"]:
+        if player["name"] == name:
+            return player["points_per_game"]
+    for player in data["away"]["players"]:
+        if player["name"] == name:
+            return player["points_per_game"]
+    return None
+
+def player_age():
+    pass
+
+def team_colors():
+    pass
+
+def team_names():
+    pass
+
+def player_numbers():
+    pass
+
+def player_stats():
+    pass
+
+def average_rebounds_by_shoe_brand():
+    pass
