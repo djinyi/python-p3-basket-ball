@@ -194,11 +194,28 @@ def num_points_per_game(name):
             return player["points_per_game"]
     return None
 
-def player_age():
-    pass
+def player_age(name):
 
-def team_colors():
-    pass
+    data = game_dict()["home"]["players"] + game_dict()["away"]["players"]
+
+    for player in data:
+        if player["name"] == name:
+            print(player["age"])
+            return player["age"]
+    return None
+
+def team_colors(team):
+    data = game_dict()  # Store game_dict() result once
+
+    for location in ["home", "away"]:  # Iterate through "home" and "away"
+        if team == data[location]["team_name"]:
+            colors = data[location]["colors"]
+            print(colors)
+            return colors
+    
+    return None  # If the team is not found
+
+
 
 def team_names():
     pass
