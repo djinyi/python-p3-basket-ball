@@ -204,6 +204,18 @@ def player_age(name):
             return player["age"]
     return None
 
+    # def team_colors(team):
+    
+    #     if team == game_dict()["home"]["team_name"]:
+    #             print(game_dict()["home"]["colors"])
+    #             return game_dict()["home"]["colors"]
+
+    #     if team == game_dict()["away"]["team_name"]:
+    #             print(game_dict()["away"]["colors"])
+    #             return game_dict()["away"]["colors"]
+        
+    #     return None
+
 def team_colors(team):
     data = game_dict()  # Store game_dict() result once
 
@@ -216,9 +228,11 @@ def team_colors(team):
     return None  # If the team is not found
 
 
-
 def team_names():
-    pass
+    names = []
+    names.extend([game_dict()["home"]["team_name"], game_dict()["away"]["team_name"]])
+    print(names)
+    return names
 
 def player_numbers():
     pass
