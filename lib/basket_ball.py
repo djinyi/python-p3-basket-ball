@@ -234,8 +234,23 @@ def team_names():
     print(names)
     return names
 
-def player_numbers():
-    pass
+def player_numbers(name):
+    # takes in name
+    # returns list of jersey numbers
+
+    data = game_dict()
+    list = []
+
+    if name == data["home"]["team_name"]:
+        for player in data["home"]["players"]:
+            list.append(player["number"])
+    if name == data["away"]["team_name"]:
+        for player in data["away"]["players"]:
+            list.append(player["number"])
+
+    print(list)
+    return list
+
 
 def player_stats():
     pass
